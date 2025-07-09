@@ -8,7 +8,7 @@ namespace Assets.Scripts.Systems
         public void Play()
         {
             Debug.Log("The play button is pressed.");
-            SceneManager.LoadScene("Prolog");
+            SceneManager.LoadScene("FloorThree");
         }
 
         public void Settings()

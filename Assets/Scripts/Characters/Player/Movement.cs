@@ -4,18 +4,27 @@ namespace Assets.Scripts.Characters.Player
 {
     public class Movement : MonoBehaviour
     {
+        [Header("Movement Settings")]
         public float walkSpeed = 3f;
         public float runSpeed = 6f;
         public float jumpHeight = 0.5f;
         public float jumpDuration = 0.3f;
+
+        [Header("Audio Settings")]
+        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private AudioClip walkClip;
+        [SerializeField] private AudioClip runClip;
+        [SerializeField] private AudioClip jumpClip;
+
+        [Header("Animation")]
+        [SerializeField] private Animator animator;
 
         private Rigidbody2D rb;
         private Vector2 movement;
         private bool isJumping = false;
         private float jumpTimer = 0f;
         private Vector3 originalPosition;
-
-        [SerializeField] private Animator animator;
+        private bool wasMoving = false;
 
         void Start()
         {
@@ -28,6 +37,7 @@ namespace Assets.Scripts.Characters.Player
             HandleInput();
             HandleJump();
             AnimateJumpOffset();
+            HandleWalkingSound();
         }
 
         void FixedUpdate()
@@ -49,6 +59,7 @@ namespace Assets.Scripts.Characters.Player
                 isJumping = true;
                 jumpTimer = 0f;
                 animator.SetTrigger("Jump");
+                PlaySound(jumpClip);
             }
         }
 
@@ -72,8 +83,47 @@ namespace Assets.Scripts.Characters.Player
 
         void Move()
         {
-            float currentSpeed = Input.GetMouseButton(1) ? runSpeed : walkSpeed;
+            float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
             rb.MovePosition(rb.position + currentSpeed * Time.fixedDeltaTime * movement);
+        }
+
+        void HandleWalkingSound()
+        {
+            bool isMoving = movement.magnitude > 0.1f;
+            bool isRunning = Input.GetKey(KeyCode.LeftShift);
+            bool shouldPlay = isMoving && !isJumping;
+
+            if (!shouldPlay && audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+
+            if (!shouldPlay)
+            {
+                wasMoving = false;
+                return;
+            }
+
+            AudioClip targetClip = isRunning ? runClip : walkClip;
+            bool clipChanged = audioSource.clip != targetClip;
+            bool justStartedMoving = !wasMoving;
+
+            if (clipChanged || justStartedMoving)
+            {
+                audioSource.clip = targetClip;
+                audioSource.loop = true;
+                audioSource.Play();
+            }
+
+            wasMoving = true;
+        }
+
+        void PlaySound(AudioClip clip)
+        {
+            if (clip != null)
+            {
+                audioSource.PlayOneShot(clip);
+            }
         }
     }
 }
