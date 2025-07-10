@@ -37,6 +37,7 @@
     "**/*.jpg": true,
     "**/*.jpeg": true,
     "**/*.png": true,
+    "**/*.svg": true,
     "**/*.psd": true,
     "**/*.tga": true,
     "**/*.tif": true,

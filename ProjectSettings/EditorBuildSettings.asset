@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/System/Credits.unity
     guid: b7651b9f1958d034197f8212465a3833
   - enabled: 1
-    path: Assets/Scenes/System/Pause.unity
+    path: Assets/Scenes/System/PauseMenu.unity
     guid: 0a26eac5171afb4448fe7cd22862a130
   - enabled: 1
     path: Assets/Scenes/Prolog/FloorThree.unity

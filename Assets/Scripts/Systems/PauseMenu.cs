@@ -21,13 +21,14 @@ namespace Assets.Scripts.Systems
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (isPaused) Resume();
+                if (isPaused) Continue();
                 else Pause();
             }
         }
 
         public void Pause()
         {
+            Debug.Log("The pause button is pressed.");
             if (pauseMenuUI == null) return;
 
             pauseMenuUI.SetActive(true);
@@ -41,23 +42,24 @@ namespace Assets.Scripts.Systems
             }
         }
 
-        public void Resume()
+        public void Continue()
         {
+            Debug.Log("The continue button is pressed.");
             if (pauseMenuUI == null) return;
             pauseMenuUI.SetActive(false);
             Time.timeScale = 1f;
             isPaused = false;
         }
 
+        public void Settings()
+        {
+            Debug.Log("The settings button is pressed.");
+        }
+
         public void ExitToMainMenu()
         {
             Time.timeScale = 1f;
             SceneManager.LoadScene("StartMenu");
-        }
-
-        public void OpenSettings()
-        {
-            Debug.Log("The settings button is pressed.");
         }
     }
 }
