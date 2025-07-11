@@ -89,34 +89,42 @@ namespace Assets.Scripts.Characters.Player
 
         void HandleWalkingSound()
         {
+            if (audioSource == null) return;
+
             bool isMoving = movement.magnitude > 0.1f;
             bool isRunning = Input.GetKey(KeyCode.LeftShift);
             bool shouldPlay = isMoving && !isJumping;
 
-            if (!shouldPlay && audioSource.isPlaying)
-            {
-                audioSource.Stop();
-            }
-
             if (!shouldPlay)
             {
+                if (audioSource.isPlaying)
+                    audioSource.Stop();
+
                 wasMoving = false;
                 return;
             }
 
-            AudioClip targetClip = isRunning ? runClip : walkClip;
-            bool clipChanged = audioSource.clip != targetClip;
-            bool justStartedMoving = !wasMoving;
+            AudioClip targetClip = walkClip; // Gunakan hanya 1 clip, misal walkClip
+            float targetPitch = isRunning ? 1.5f : 1f;
 
-            if (clipChanged || justStartedMoving)
+            bool justStartedMoving = !wasMoving;
+            bool clipChanged = audioSource.clip != targetClip;
+
+            if (justStartedMoving || clipChanged)
             {
                 audioSource.clip = targetClip;
+                audioSource.pitch = targetPitch;
                 audioSource.loop = true;
                 audioSource.Play();
+            }
+            else
+            {
+                audioSource.pitch = targetPitch; // ubah pitch saat player lari/jalan
             }
 
             wasMoving = true;
         }
+
 
         void PlaySound(AudioClip clip)
         {
