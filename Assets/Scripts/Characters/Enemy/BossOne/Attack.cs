@@ -1,5 +1,4 @@
 using UnityEngine;
-using PlayerHP = Assets.Scripts.Characters.Player.HealthPoint;
 
 namespace Assets.Scripts.Characters.Enemy.BossOne
 {
