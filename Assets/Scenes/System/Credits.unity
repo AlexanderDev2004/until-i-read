@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 623368930}
   - component: {fileID: 623368929}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,12 +246,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -300,6 +300,75 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &753726393
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -3888481672020999207, guid: e5dd77958333d6945bac8933b39b54e2, type: 3}
+      propertyPath: m_Name
+      value: Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: e5dd77958333d6945bac8933b39b54e2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.914468
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: e5dd77958333d6945bac8933b39b54e2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.91507775
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: e5dd77958333d6945bac8933b39b54e2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0652
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: e5dd77958333d6945bac8933b39b54e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0738
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: e5dd77958333d6945bac8933b39b54e2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: e5dd77958333d6945bac8933b39b54e2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: e5dd77958333d6945bac8933b39b54e2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: e5dd77958333d6945bac8933b39b54e2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: e5dd77958333d6945bac8933b39b54e2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: e5dd77958333d6945bac8933b39b54e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: e5dd77958333d6945bac8933b39b54e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: e5dd77958333d6945bac8933b39b54e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: e5dd77958333d6945bac8933b39b54e2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 7243324766535440047, guid: e5dd77958333d6945bac8933b39b54e2, type: 3}
 --- !u!1 &1353349903
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +382,7 @@ GameObject:
   - component: {fileID: 1353349905}
   - component: {fileID: 1353349907}
   m_Layer: 5
-  m_Name: Main_Credit
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,8 +404,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: -605}
-  m_SizeDelta: {x: 500, y: 50}
+  m_AnchoredPosition: {x: 8, y: -1150}
+  m_SizeDelta: {x: 1520, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1353349905
 MonoBehaviour:
@@ -358,9 +427,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Until I Read\n\n\n\n\n\nGame Programing : \r\nRafi Abiyyu Airlangga\r\nAlexander
-    Agung Raya\r\n\r\n2D Artis :\r\nGunawan\r\n\r\nGame Desain :\r\nAlexander Agung
-    Raya \r\n\r\nAssets :\r\n\r\nSFX :\r\nwalther-p38-sfx-pack - https://jdsherbert.itch.io/walther-p38-sfx-pack\r\n\r\n"
+  m_text: "               Until I Read\n\n\nGame Programming     Alexander Agung
+    Raya\n\t\t Rafi Abiyyu Airlangga\r\r\n\r\n2D Artist            Gunawan Wibisono\r\n\r\nGame
+    Design          Alexander Agung Raya \r\n\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b0eb148c29231694fab87bd1c123b838, type: 2}
   m_sharedMaterial: {fileID: 3263568304235011261, guid: b0eb148c29231694fab87bd1c123b838, type: 2}
@@ -626,5 +695,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2088781364}
+  - {fileID: 753726393}
   - {fileID: 623368932}
   - {fileID: 166705182}
