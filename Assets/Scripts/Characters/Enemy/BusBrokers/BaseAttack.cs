@@ -6,6 +6,6 @@ namespace Assets.Scripts.Characters.Enemy.BusBrokers
     {
         public float damage;
 
-        public abstract void Attack();
+        public abstract void Attack(GameObject target);
     }
 }
