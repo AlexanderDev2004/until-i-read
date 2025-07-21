@@ -8,7 +8,7 @@ namespace Assets.Scripts.Systems
         public void Play()
         {
             Debug.Log("The play button is pressed.");
-            SceneManager.LoadScene("FloorThree");
+            SceneManager.LoadScene("KaraSarjitoRoom");
         }
 
         public void Settings()
