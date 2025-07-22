@@ -83,5 +83,7 @@ namespace Assets.Scripts.Characters.Player.KaraSarjito.Movement
 
             wasMoving = true;
         }
+
+        
     }
 }
