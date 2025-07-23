@@ -1,44 +1,57 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Interactable : MonoBehaviour
+namespace Assets.Scripts.Characters.Player.KaraSarjito.Movement
 {
-    public GameObject interactPrompt; // assign UI Text/Image dari inspector
-
-    private bool isPlayerNearby = false;
-
-    private void Start()
+    public class Interactable : MonoBehaviour
     {
-        if (interactPrompt != null)
-            interactPrompt.SetActive(false);
-    }
+        public GameObject interactPrompt;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
+        private bool isPlayerNearby = false;
+
+        private void Start()
         {
-            isPlayerNearby = true;
             if (interactPrompt != null)
-                interactPrompt.SetActive(true);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            isPlayerNearby = false;
-            if (interactPrompt != null)
+            {
                 interactPrompt.SetActive(false);
+            }
         }
-    }
 
-    private void Update()
-    {
-        if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("Interacted!");
-            
+            if (!collision.CompareTag("Player"))
+            {
+                return;
+            }
+
+            isPlayerNearby = true;
+
+            if (interactPrompt != null)
+            {
+                interactPrompt.SetActive(true);
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (!collision.CompareTag("Player"))
+            {
+                return;
+            }
+
+            isPlayerNearby = false;
+
+            if (interactPrompt != null)
+            {
+                interactPrompt.SetActive(false);
+            }
+        }
+
+        private void Update()
+        {
+            if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("Interacted!");
+            }
         }
     }
 }

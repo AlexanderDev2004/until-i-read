@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Scripts.Systems
+namespace Assets.Scripts.Environments
 {
-    public class RestrictionArea : MonoBehaviour
+    public class BoundariesArea : MonoBehaviour
     {
         [Header("Reference")]
         public GameObject character;
