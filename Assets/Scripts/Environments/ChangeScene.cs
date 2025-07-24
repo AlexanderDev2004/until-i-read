@@ -9,7 +9,7 @@ namespace Assets.Scripts.Environments
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            SceneManager.LoadScene(SceneName);
+            SceneManager.LoadSceneAsync(SceneName);
         }
     }
 }

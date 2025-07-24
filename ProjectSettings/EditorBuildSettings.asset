@@ -24,11 +24,14 @@ EditorBuildSettings:
     path: Assets/Scenes/System/PauseMenu.unity
     guid: 0a26eac5171afb4448fe7cd22862a130
   - enabled: 1
-    path: Assets/Scenes/Prolog/FloorThree.unity
-    guid: 6d710d3c66df35d439bfbc3a54318d43
-  - enabled: 1
     path: Assets/Scenes/Prolog/Room/KaraSarjitoRoom.unity
     guid: a2d75742479d4a44baf392aab9bec006
+  - enabled: 1
+    path: Assets/Scenes/Prolog/Room/AhmadSarjitoRoom.unity
+    guid: c0449243b0a52bf408ef49c5f7579005
+  - enabled: 0
+    path: Assets/Scenes/Prolog/FloorThree.unity
+    guid: 6d710d3c66df35d439bfbc3a54318d43
   - enabled: 1
     path: Assets/Scenes/Prolog/Building/House.unity
     guid: 35ba80e965a37984f93cbe7ea0a40947
