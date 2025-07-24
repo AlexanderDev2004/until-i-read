@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Assets.Scripts.Systems
+namespace Assets.Scripts.Systems.UI
 {
     public class StartMenu : MonoBehaviour
     {

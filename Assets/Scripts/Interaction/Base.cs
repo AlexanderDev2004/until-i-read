@@ -1,14 +1,16 @@
 using UnityEngine;
 
-namespace Assets.Scripts.Characters.Player.KaraSarjito.Movement
+namespace Assets.Scripts.Interaction
 {
-    public class Interactable : MonoBehaviour
+    public abstract class Base : MonoBehaviour
     {
+        [Header("Interaction")]
+        public GameObject target;
         public GameObject interactPrompt;
 
-        private bool isPlayerNearby = false;
+        protected bool isPlayerNearby = false;
 
-        private void Start()
+        protected virtual void Start()
         {
             if (interactPrompt != null)
             {
@@ -16,9 +18,17 @@ namespace Assets.Scripts.Characters.Player.KaraSarjito.Movement
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        protected virtual void Update()
         {
-            if (!collision.CompareTag("Player"))
+            if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
+            {
+                Interact();
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (!other.CompareTag("Player"))
             {
                 return;
             }
@@ -31,9 +41,9 @@ namespace Assets.Scripts.Characters.Player.KaraSarjito.Movement
             }
         }
 
-        private void OnTriggerExit2D(Collider2D collision)
+        private void OnTriggerExit2D(Collider2D other)
         {
-            if (!collision.CompareTag("Player"))
+            if (!other.CompareTag("Player"))
             {
                 return;
             }
@@ -46,12 +56,6 @@ namespace Assets.Scripts.Characters.Player.KaraSarjito.Movement
             }
         }
 
-        private void Update()
-        {
-            if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
-            {
-                Debug.Log("Interacted!");
-            }
-        }
+        public abstract void Interact();
     }
 }
