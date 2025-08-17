@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Scripts.Systems.Scene
+namespace Assets.Scripts.Scene
 {
     public class BoundariesArea : MonoBehaviour
     {

@@ -2,7 +2,7 @@ using Assets.Scripts.Interaction;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Assets.Scripts.Systems.Scene
+namespace Assets.Scripts.Scene
 {
     public class SceneTrigger : Base
     {
