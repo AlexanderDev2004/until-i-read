@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Medkit
   m_EditorClassIdentifier: 
   itemName: Medkit
-  icon: {fileID: 0}
+  icon: {fileID: -5962089118616731286, guid: d4a728fa6fb9acb48b646a17e09c8559, type: 3}
   healAmount: 20

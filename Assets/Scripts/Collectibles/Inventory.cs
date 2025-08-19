@@ -1,5 +1,6 @@
 using Assets.Scripts.Items;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Collectibles
 {
@@ -9,6 +10,12 @@ namespace Assets.Scripts.Collectibles
         /// Total slot quick inventory (default = 4).
         /// </summary>
         [SerializeField] protected int fullQuickSlot = 4;
+
+        /// <summary>
+        /// Menampilkan gambar item yang nantinya akan ditampilkan
+        /// di quick slot.
+        /// </summary>
+        [SerializeField] protected Image[] slotImages;
 
         /// <summary>
         /// Array untuk menyimpan item di quick slot.

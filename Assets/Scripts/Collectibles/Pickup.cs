@@ -12,6 +12,13 @@ namespace Assets.Scripts.Collectibles
                 if (quickSlots[i] == null) // Slot kosong
                 {
                     quickSlots[i] = item;
+
+                    if (slotImages != null && i < slotImages.Length)
+                    {
+                        slotImages[i].sprite = item.icon;
+                        slotImages[i].enabled = true; // pastikan gambar aktif
+                    }
+
                     Debug.Log($"Item {item.itemName} ditambahkan ke slot {i}");
                     return true; // sukses masuk ke quick slot
                 }
@@ -28,6 +35,13 @@ namespace Assets.Scripts.Collectibles
             }
 
             quickSlots[index] = null; // hapus item
+
+            // Reset UI slot jadi kosong
+            if (slotImages != null && index < slotImages.Length)
+            {
+                slotImages[index].sprite = null;
+                slotImages[index].enabled = false;
+            }
         }
     }
 }
