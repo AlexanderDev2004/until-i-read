@@ -1,4 +1,4 @@
-namespace Assets.Scripts.Characters.Player.KaraSarjito.Health
+namespace Assets.Scripts.PlayerProperties
 {
     public enum Type
     {

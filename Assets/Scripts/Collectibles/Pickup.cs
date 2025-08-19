@@ -1,16 +1,18 @@
+using Assets.Scripts.Items;
 using UnityEngine;
 
 namespace Assets.Scripts.Collectibles
 {
     public class Pickup : Inventory
     {
-        public override bool AddItem(GameObject item)
+        public override bool AddItem(ItemData item)
         {
             for (int i = 0; i < fullQuickSlot; i++)
             {
                 if (quickSlots[i] == null) // Slot kosong
                 {
                     quickSlots[i] = item;
+                    Debug.Log($"Item {item.itemName} ditambahkan ke slot {i}");
                     return true; // sukses masuk ke quick slot
                 }
             }

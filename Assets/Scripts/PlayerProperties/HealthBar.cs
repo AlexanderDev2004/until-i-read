@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Scripts.Characters.Player.KaraSarjito.Health
+namespace Assets.Scripts.PlayerProperties
 {
     public class HealthBar : MonoBehaviour
     {

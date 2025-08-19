@@ -1,16 +1,20 @@
+using Assets.Scripts.Items;
+using Assets.Scripts.PlayerProperties;
 using UnityEngine;
 
 namespace Assets.Scripts.Collectibles
 {
-    public class Medkit : CollectibleItem
+    [CreateAssetMenu(fileName = "Medkit", menuName = "Items/Healing/Medkit")]
+    public class Medkit : ItemData
     {
-        public override void OnPickup(Pickup inventory)
-        {
-            bool added = inventory.AddItem(itemData); // masukkan data, bukan gameObject
+        public float healAmount;
 
-            if (!added)
+        public override void Use(GameObject user)
+        {
+            if (user.TryGetComponent<Point>(out var hp))
             {
-                Debug.Log("Quick slot penuh, medkit tidak bisa diambil.");
+                hp.Heal(healAmount);
+                Debug.Log($"{itemName} digunakan, heal {healAmount}.");
             }
         }
     }

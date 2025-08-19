@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Assets.Scripts.Characters.Player.KaraSarjito.Attack
+namespace Assets.Scripts.Characters.Player.KaraSarjito
 {
     public abstract class BaseAttack : MonoBehaviour
     {

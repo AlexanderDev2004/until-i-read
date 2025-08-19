@@ -1,3 +1,4 @@
+using Assets.Scripts.Items;
 using UnityEngine;
 
 namespace Assets.Scripts.Collectibles
@@ -13,18 +14,18 @@ namespace Assets.Scripts.Collectibles
         /// Array untuk menyimpan item di quick slot.
         /// Null = slot kosong.
         /// </summary>
-        protected GameObject[] quickSlots;
+        protected ItemData[] quickSlots;
 
         protected virtual void Awake()
         {
-            quickSlots = new GameObject[fullQuickSlot];
+            quickSlots = new ItemData[fullQuickSlot];
         }
 
         /// <summary>
         /// Menambah item ke slot. 
         /// Kalau slot penuh, return false (bisa diarahkan ke main inventory).
         /// </summary>
-        public abstract bool AddItem(GameObject item);
+        public abstract bool AddItem(ItemData item);
 
         /// <summary>
         /// Menghapus item dari slot index tertentu.
@@ -50,7 +51,7 @@ namespace Assets.Scripts.Collectibles
         /// <summary>
         /// Mengambil item pada slot tertentu.
         /// </summary>
-        public GameObject GetItem(int index)
+        public ItemData GetItem(int index)
         {
             if (index < 0 || index >= fullQuickSlot)
             {

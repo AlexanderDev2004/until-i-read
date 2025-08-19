@@ -1,15 +1,13 @@
-using UnityEngine;
+using Assets.Scripts.Collectibles;
 using Assets.Scripts.Interaction;
+using UnityEngine;
 
-namespace Assets.Scripts.Collectibles
+namespace Assets.Scripts.Items
 {
-    [RequireComponent(typeof(Collider2D))]
-    public abstract class CollectibleItem : Base
+    public class CollectibleItem : Base
     {
         [Header("Collectible Data")]
-        public string itemName;
-        public Sprite icon;
-        public GameObject itemData;
+        public ItemData itemData;
 
         protected Pickup playerInventory;
 
@@ -20,7 +18,7 @@ namespace Assets.Scripts.Collectibles
                 playerInventory = inventory;
             }
 
-            base.OnTriggerEnter2D(other); // biar prompt E tetap jalan
+            base.OnTriggerEnter2D(other);
         }
 
         private new void OnTriggerExit2D(Collider2D other)
@@ -37,11 +35,16 @@ namespace Assets.Scripts.Collectibles
         {
             if (playerInventory != null)
             {
-                OnPickup(playerInventory);
-                Destroy(gameObject);
+                bool added = playerInventory.AddItem(itemData);
+                if (added)
+                {
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    Debug.Log("Quick slot penuh, item tidak bisa diambil.");
+                }
             }
         }
-
-        public abstract void OnPickup(Pickup inventory);
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Assets.Scripts.Characters.Player.KaraSarjito.Movement
+namespace Assets.Scripts.Characters.Player.KaraSarjito
 {
     public class Explore : MonoBehaviour
     {
@@ -83,7 +83,5 @@ namespace Assets.Scripts.Characters.Player.KaraSarjito.Movement
 
             wasMoving = true;
         }
-
-        
     }
 }
