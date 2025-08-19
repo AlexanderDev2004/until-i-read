@@ -2,31 +2,30 @@ using UnityEngine;
 
 namespace Assets.Scripts.Collectibles
 {
-    public class Pickup : MonoBehaviour
+    public class Pickup : Inventory
     {
-        private Inventory inventory;
-        public GameObject itemPrefab; // Prefab item yang akan diambil
-
-        private void Start()
+        public override bool AddItem(GameObject item)
         {
-            inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-        }
-
-        void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.CompareTag("Player"))
+            for (int i = 0; i < fullQuickSlot; i++)
             {
-                for (int i = 0; i < inventory.slot.Length; i++)
+                if (quickSlots[i] == null) // Slot kosong
                 {
-                    if (inventory.isfull[i] == false)
-                    {
-                        inventory.isfull[i] = true;
-                        Instantiate(itemPrefab, inventory.slot[i].transform, false);
-                        Destroy(gameObject); // Hapus item setelah diambil
-                        break;
-                    }
+                    quickSlots[i] = item;
+                    return true; // sukses masuk ke quick slot
                 }
             }
+
+            return false; // penuh, bisa diarahkan ke main inventory nanti
+        }
+
+        public override void RemoveItem(int index)
+        {
+            if (index < 0 || index >= fullQuickSlot)
+            {
+                return;
+            }
+
+            quickSlots[index] = null; // hapus item
         }
     }
 }

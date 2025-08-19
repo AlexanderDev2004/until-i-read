@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Characters.Player.KaraSarjito.Health
 {
-    public abstract class HealingItem : MonoBehaviour
+    public abstract class HealingItem : ScriptableObject
     {
         public Type healType;
         public float amount;

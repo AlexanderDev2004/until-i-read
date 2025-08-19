@@ -5,7 +5,6 @@ namespace Assets.Scripts.Interaction
     public abstract class Base : MonoBehaviour
     {
         [Header("Interaction")]
-        public GameObject target;
         public GameObject interactPrompt;
 
         protected bool isPlayerNearby = false;
@@ -26,7 +25,7 @@ namespace Assets.Scripts.Interaction
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        public void OnTriggerEnter2D(Collider2D other)
         {
             if (!other.CompareTag("Player"))
             {
@@ -41,7 +40,7 @@ namespace Assets.Scripts.Interaction
             }
         }
 
-        private void OnTriggerExit2D(Collider2D other)
+        public void OnTriggerExit2D(Collider2D other)
         {
             if (!other.CompareTag("Player"))
             {

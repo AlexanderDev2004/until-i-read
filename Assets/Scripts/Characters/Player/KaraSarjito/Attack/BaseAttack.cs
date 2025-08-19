@@ -7,7 +7,7 @@ namespace Assets.Scripts.Characters.Player.KaraSarjito.Attack
         public float damage;
         public float speed;
 
-        public abstract void BuffAttack();
-        public abstract void RegularAttack();
+        public abstract void BuffHit();
+        public abstract void RegularHit();
     }
 }
