@@ -1424,6 +1424,7 @@ GameObject:
   - component: {fileID: 831185204}
   - component: {fileID: 831185207}
   - component: {fileID: 831185209}
+  - component: {fileID: 831185210}
   m_Layer: 0
   m_Name: PlayerDummy
   m_TagString: Player
@@ -1582,6 +1583,19 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0061168117, y: 0.0043600285}
   m_Size: {x: 1.1061871, y: 2.008722}
   m_Direction: 0
+--- !u!114 &831185210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831185203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acbaee4a5702fea4b866661bf07e9b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullQuickSlot: 4
 --- !u!1 &842433522
 GameObject:
   m_ObjectHideFlags: 0
