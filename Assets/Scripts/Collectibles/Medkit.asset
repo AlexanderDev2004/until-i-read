@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8ef394e52988a4fb25f5da935e910b, type: 3}
   m_Name: Medkit
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Medkit
   icon: {fileID: 0}
   healAmount: 0
