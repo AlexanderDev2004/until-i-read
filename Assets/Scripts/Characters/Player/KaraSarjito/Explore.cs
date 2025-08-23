@@ -36,7 +36,18 @@ namespace Assets.Scripts.Characters.Player.KaraSarjito
         {
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
-            movement = new Vector2(horizontal, vertical).normalized;
+
+            // Biar gak bisa diagonal, pilih sumbu dominan
+            if (Mathf.Abs(horizontal) > 0)
+            {
+                vertical = 0; // matikan gerakan vertikal
+            }
+            else if (Mathf.Abs(vertical) > 0)
+            {
+                horizontal = 0; // matikan gerakan horizontal
+            }
+
+            movement = new Vector2(horizontal, vertical);
         }
 
         private void Move()
