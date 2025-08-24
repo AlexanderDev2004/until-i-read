@@ -1570,8 +1570,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.15}
-  m_Size: {x: 0.12, y: 0.19}
+  m_Offset: {x: -0.002790118, y: 0.45827702}
+  m_Size: {x: 0.41581193, y: 0.8065539}
   m_Direction: 0
 --- !u!50 &772569216
 Rigidbody2D:
@@ -1664,8 +1664,8 @@ Transform:
   m_GameObject: {fileID: 772569211}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -324.49905, y: -181.01518, z: 0}
-  m_LocalScale: {x: 4.736378, y: 4.736378, z: 4.736378}
+  m_LocalPosition: {x: -325.2713, y: -180.9124, z: 0}
+  m_LocalScale: {x: 1.6473123, y: 1.4464889, z: 4.736378}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1274887420}
@@ -4276,7 +4276,7 @@ MonoBehaviour:
   interactPrompt: {fileID: 1681333953}
   transitions:
   - fromScene: KaraSarjitoRoom
-    toScene: House
+    toScene: Lt2
 --- !u!61 &1608067668
 BoxCollider2D:
   m_ObjectHideFlags: 0
