@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
-namespace Assets.Scripts.Systems.UI
+namespace Assets.Scripts.UI
 {
     public class PauseMenu : MonoBehaviour
     {
@@ -28,7 +28,6 @@ namespace Assets.Scripts.Systems.UI
 
         public void Pause()
         {
-            Debug.Log("The pause button is pressed.");
             if (pauseMenuUI == null) return;
 
             pauseMenuUI.SetActive(true);

@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Prolog/Room/AhmadSarjitoRoom.unity
     guid: c0449243b0a52bf408ef49c5f7579005
   - enabled: 1
-    path: Assets/Scenes/Prolog/Building/House.unity
+    path: Assets/Scenes/Prolog/Building/KaraHouse.unity
     guid: 35ba80e965a37984f93cbe7ea0a40947
   - enabled: 1
     path: Assets/Scenes/Prolog/Environment/Outside.unity
